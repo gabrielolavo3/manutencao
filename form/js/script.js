@@ -32,7 +32,7 @@ function adicionarCliente() {
     botaoExcluir.classList.add('btn-excluir');
 
     botaoExcluir.onclick = function () {
-        let confirmacao = confirm("Você deseja excluir esse dado?")
+        let confirmacao = confirm("Você deseja excluir esse cliente?")
 
         if (confirmacao) {
             alert('Dado excluído com sucesso')
