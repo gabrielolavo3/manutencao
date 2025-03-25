@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Exemplo de Sistema com Erros para Correção</title>    
+</head>
+
+<body>
+
+    <h1>Sistema de Correção de Erros</h1>
+    <p>Este sistema contém erros intencionais para que você os corrija.</p>
+
+    <h2>Função de Cálculo</h2>
+
+    <label for="num1">Digite o 1º número</label>
+    <input type="number" name="numero1" id="num1">
+    <label for="num1">Digite o 2º número</label>
+    <input type="number" name="numero2" id="num2">
+
+    <button onclick="fixCalc()">Cálcular</button>
+    <p id="calc-error" class="error"></p>
+
+    <h2>Formulário</h2>
+
+    <form action="#" method="get"></form>
+        <label for="nome">Digite o nome</label>
+        <input type="text" id="nome">
+        <label for="sobrenome">Digite o sobrenome</label>
+        <input type="text" id="sobrenome">
+        <label for="e-mail">Digite o e-mail</label>
+        <input type="e-mail" id="e-mail">
+        <label for="e-mail">Digite o nº de telefone</label>
+        <input type="text" id="e-mail">
+
+        <button onclick="fixFormValidation()">Enviar dados</button>        
+        <p id="form-error" class="error"></p>
+    </form>
+
+
+    <div class="form-section">
+        <h3>Documentação da Manutenção</h3>
+        
+        <form id="maintenance-form">
+            <label for="date">Data da Manutenção:</label>
+            <input type="date" id="date" required>
+
+            <label for="error-type">Tipo de Manutenção:</label>
+            <input type="text" id="error-type" value="Corretiva" readonly>
+
+            <label for="description">Descrição da Manutenção:</label>
+            <textarea id="description" required></textarea>
+
+            <label for="responsible">Responsável:</label>
+            <input type="text" id="responsible" required>
+
+            <button type="button" onclick="generateReport()">Gerar Relatório</button>
+        </form>
+    </div>
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
