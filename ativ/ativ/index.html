@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja de Acessórios Norte</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <h1>Loja de Acessórios Norte</h1>
+
+     <!-- login -->
+  <section id="telaLogin" class="tela">
+    <h2>Login</h2>
+    <input type="text" id="loginUsuario" placeholder="Usuário"><br>
+    <input type="password" id="loginSenha" placeholder="Senha"><br>
+    <button onclick="login()">Entrar</button>
+    <p>Não tem conta? <a href="#" onclick="mostrar('cadastro')">Cadastre-se</a></p>
+  </section>
+
+
+  <!-- cadastro -->
+  <section id="telaCadastro" class="tela">
+    <h2>Cadastro</h2>
+    <input type="text" id="cadUsuario" placeholder="Usuário"><br>
+    <input type="password" id="cadSenha" placeholder="Senha"><br>
+    <select id="cadPerfil">
+      <option value="">Selecione o perfil</option>
+      <option value="funcionario">Funcionário</option>
+      <option value="cliente">Cliente</option>
+    </select><br>
+    <button onclick="cadastrar()">Cadastrar</button>
+    <p>Já tem conta? <a href="#" onclick="mostrar('login')">Voltar ao login</a></p>
+  </section>
+
+
+  <!-- funcionário -->
+  <section id="telaDashboard" class="tela">
+    <h2>Dashboard - Funcionário</h2>
+    <br><br>
+    <input type="hidden" id="idProduto">
+    <input type="text" id="nome" placeholder="Nome do produto">
+    <input type="number" id="preco" placeholder="Preço">
+    <input type="number" id="quantidade" placeholder="Quantidade">
+    <button onclick="salvarProduto()">Salvar Produto</button>
+    <br><br>
+    <table>
+      <thead>
+        <tr>
+          <th>Nome</th><th>Preço</th><th>Quantidade</th><th>Ações</th>
+        </tr>
+      </thead>
+      <tbody id="tabelaProdutos"></tbody>
+    </table>
+    <br>
+    <button onclick="gerarPDF()">Gerar PDF</button>
+    <button onclick="logout()">Sair</button>
+  </section>
+
+
+  <!-- cliente -->
+  <section id="telaCliente" class="tela">
+    <h2>Bem-vindo, Cliente</h2>
+    <header>
+      <p onclick="mostrarImagem('anel')">Anel</p>
+      <p onclick="mostrarImagem('brinco')">Brinco</p>
+      <p onclick="mostrarImagem('colar')">Colar</p>
+      <p onclick="mostrarImagem('pulseira')">Pulseira</p>
+    </header>
+    
+    <div id="areaImagem" class="imagem-container"></div>
+    
+    <button onclick="logout()">Sair</button>
+  </section>
+
+
+</body>
+<script src="js/script.js"></script>
+</html>
